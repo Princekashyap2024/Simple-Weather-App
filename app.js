@@ -12,7 +12,7 @@ document.getElementById("getWeatherButton").addEventListener("click", async () =
         return;
     }
 
-    const apiKey = "6b9dac357a8b5dd9fa7a7e36b86884c9";
+    const apiKey = "0fa6c10403a7384559fd9c99e5bcf853";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     try {
