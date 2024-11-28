@@ -15,10 +15,17 @@ Whether you're planning your day or simply curious about the weather, this app h
 ---
 
 ## ✨ **Features**
-✔️ Search weather by city name.  
-✔️ Display current temperature, humidity, and weather description.  
-✔️ Real-time updates using the OpenWeatherMap API.  
-✔️ Clean and responsive design, perfect for any device.  
+✔️ Search weather by city name.
+<br>
+✔️ Display current temperature, humidity, and weather description.
+<br>
+✔️ Real-time updates using the OpenWeatherMap API.
+<br>
+✔️ Clean and responsive design, perfect for any device.
+<br>
+✔️ Dark Mode: Easily switch between light and dark themes.
+<br>
+✔️ Stylish buttons with hover animations and gradients for an enhanced user experience. 
 
 ---
 
@@ -52,9 +59,10 @@ Follow these steps to set up the app locally:
 ---
 
 ## 📝 **How to Use**  
-1. Enter the name of the city you want to check the weather for.  
-2. Click the **"Get Weather"** button.  
-3. View the temperature, humidity, and current weather conditions instantly!  
+1. Enter the name of the city you want to check the weather for.
+2. Click the "Get Weather" button.
+3. View the temperature, humidity, and current weather conditions instantly!
+4. Click the "Dark Mode" button to toggle between light and dark themes.
 
 ---
 
@@ -73,11 +81,12 @@ weather-app/
 
 ---
 
-## 🎯 **Future Enhancements**  
-- 🌍 Add geolocation support to detect the user’s location automatically.  
-- 📅 Implement a 7-day weather forecast feature.  
-- 🎨 Improve the design with animations and weather icons.  
-- 📊 Add wind speed and atmospheric pressure details.  
+## 🎯 Future Enhancements
+- 🌍 Add geolocation support to detect the user’s location automatically.
+- 📅 Implement a 7-day weather forecast feature.
+- 🎨 Add animations and dynamic weather icons for better visual appeal.
+- 📊 Include wind speed and atmospheric pressure details.
+- 🌟 Save user preferences for dark mode.
 
 ---
 
