@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1><img src="https://img.icons8.com/emoji/48/000000/sun-emoji.png"/> Weather App</h1>
-            <button id="darkModeButton" class="dark-mode-btn">🌙 Dark Mode</button>
-        </header>
-        
-        <div class="search-container">
-            <input type="text" id="cityInput" placeholder="Enter city name..." />
-            <button id="getWeatherButton" class="get-weather-btn">Get Weather</button>
-        </div>
-
-        <div id="weatherOutput" class="weather-output">
-            <!-- Weather information will appear here -->
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  <div id="app" class="light-mode">
+    <header>
+      <h1>🌤️ Weather App</h1>
+      <button id="dark-mode-toggle">🌙 Dark Mode</button>
+    </header>
+    <main>
+      <div class="search-container">
+        <input type="text" id="city-input" placeholder="Enter city name..." />
+        <button id="get-weather">Get Weather</button>
+      </div>
+      <div id="weather-result" class="card hidden">
+        <h2 id="city-name"></h2>
+        <p id="temperature"></p>
+        <p id="humidity"></p>
+        <p id="description"></p>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>
