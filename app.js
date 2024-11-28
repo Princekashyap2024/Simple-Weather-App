@@ -1,39 +1,31 @@
-const apiKey = '6b9dac357a8b5dd9fa7a7e36b86884c9';
-const weatherDiv = document.getElementById('weather');
-const button = document.getElementById('getWeather');
-
-button.addEventListener('click', async () => {
-  const city = document.getElementById('city').value.trim();
-  if (!city) {
-    weatherDiv.innerHTML = `<p class="error">Please enter a city name!</p>`;
-    return;
-  }
-
-  try {
-    // Fetch weather data
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
-    );
-
-    if (!response.ok) {
-      throw new Error('City not found');
-    }
-
-    const data = await response.json();
-    displayWeather(data);
-  } catch (error) {
-    weatherDiv.innerHTML = `<p class="error">${error.message}</p>`;
-  }
+document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
 });
 
-function displayWeather(data) {
-  const { name, main, weather } = data;
-  weatherDiv.innerHTML = `
-    <div class="weather-info">
-      <h2>${name}</h2>
-      <p><strong>Temperature:</strong> ${main.temp}°C</p>
-      <p><strong>Humidity:</strong> ${main.humidity}%</p>
-      <p><strong>Weather:</strong> ${weather[0].description}</p>
-    </div>
-  `;
-}
+document.getElementById('get-weather').addEventListener('click', async () => {
+  const city = document.getElementById('city-input').value.trim();
+  if (!city) {
+    alert('Please enter a city name');
+    return;
+  }
+  
+  const apiKey = '6b9dac357a8b5dd9fa7a7e36b86884c9';
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    if (data.cod === 200) {
+      document.getElementById('city-name').textContent = data.name;
+      document.getElementById('temperature').textContent = `Temperature: ${data.main.temp} °C`;
+      document.getElementById('humidity').textContent = `Humidity: ${data.main.humidity}%`;
+      document.getElementById('description').textContent = `Description: ${data.weather[0].description}`;
+      document.getElementById('weather-result').classList.remove('hidden');
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    alert('Error fetching weather data');
+  }
+});
